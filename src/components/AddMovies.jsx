@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useRef } from 'react';
 
 import { addDoc } from 'firebase/firestore';
+import { auth } from '../config/firebase';
 function AddMovies({moviCollectionRef,getMovies }) {
 
      const[name, setName]=useState("")
@@ -22,7 +23,8 @@ function AddMovies({moviCollectionRef,getMovies }) {
                 await addDoc(moviCollectionRef, {
                   isGoodMovie:isGood,
                   releaseDate: dateOfrelease,
-                  title:name
+                  title:name, 
+                  userID: auth?.currentUser?.uid
                 });
                 getMovies();
                 clear();

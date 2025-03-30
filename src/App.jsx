@@ -7,9 +7,6 @@ import Movies from './components/Movies';
 import AddMovies from './components/AddMovies';
 function App() {
   const [movies, setMovies]=useState([]);
-  // const[name, setName]=useState("")
-  // const[dateOfrelease, setDateOfrelease]=useState()
-  // const[isGood, setIsGood]=useState(false);
 
 //creating reference to the collection
 const moviCollectionRef=collection(db, "movies");
